@@ -1,16 +1,48 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Scrabble</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 50px;
+      text-align: center;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 300px;
+      border: 2px solid #2ecc71;
+      border-radius: 5px;
+    }
+    h3 {
+      margin-top: 20px;
+      color: #e74c3c;
+      font-size: 24px;
+    }
+  </style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+  <h1>Mini Scrabble</h1>
+  <p>Type a word below to get the letter count:</p>
+  <input type="text" id="evaluatedText" placeholder="Start typing...">
+  <h3 id="letterCount">0</h3>
 
+  <script>
+    const textBox = document.getElementById('evaluatedText');
+    const letterCountDisplay = document.getElementById('letterCount');
+
+    textBox.addEventListener('input', () => {
+      const textLength = textBox.value.length;
+      letterCountDisplay.textContent = textLength;
+    });
+  </script>
 </body>
-
 </html>
+
+
